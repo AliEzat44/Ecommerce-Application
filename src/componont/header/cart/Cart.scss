@@ -1,0 +1,160 @@
+@import '../../../main.scss';
+.header-cart {
+    display: flex;
+    padding-right: 3rem;
+    margin-left: auto;
+    .login {
+        list-style: none;
+        text-decoration: none;
+        color: $color-light;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        margin-left: 1.5rem;
+        position: relative;
+        &:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 0.08rem;
+            left: 50%;
+            position: absolute;
+            background: #444;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+        &:hover:after {
+            width: 100%;
+            left: 0;
+        }
+    }
+    span {
+        width: .07rem;
+        height: 2rem;
+        background-color: #222;
+        text-align: center;
+        margin-left: 1.5rem;
+    }
+    .modal {
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .4);
+        z-index: 3;
+        .cart-popup {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            text-align: left;
+            width: 300px;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+            overflow-y: auto;
+            .cart-popup-header {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                padding: 2rem 1rem;
+                .gr-close {
+                    opacity: 0.5;
+                    &:hover {
+                        font-weight: bold;
+                        opacity: 1;
+                    }
+                }
+            }
+            .product-cart-contents {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding-bottom: 2rem;
+                .product-cart {
+                    display: flex;
+                    justify-content: space-around;
+                    text-align: center;
+                    padding: 1rem;
+                    border-bottom: 0.15rem dashed #eee;
+                    .product-cart-img {
+                        flex: 1;
+                        height: 10vh;
+                        position: relative;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                    .product-cart-content {
+                        flex: 2;
+                        text-align: left;
+                        height: 10vh;
+                        span,
+                        p {
+                            color: #222;
+                            background-color: #fff;
+                            font-size: 1.2rem;
+                            padding: 0;
+                            margin: 0.2rem;
+                        }
+                    }
+                }
+            }
+            .product-cart-subtotal {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                span {
+                    color: #222;
+                    background-color: #fff;
+                    font-size: 1.5rem;
+                    margin: 1rem;
+                    width: 5rem;
+                }
+            }
+            .product-cart-checkout {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                a {
+                    margin: 1rem 1rem;
+                    border: #444 solid 0.08rem;
+                    padding: 1rem 0;
+                    text-decoration: none;
+                    list-style: none;
+                    color: #222;
+                    &:hover {
+                        &:hover {
+                            background-color: #222;
+                            color: #fff;
+                        }
+                        &:after {
+                            transition: none;
+                        }
+                    }
+                }
+                .cart-checkout{
+                    margin: 1rem 1rem;
+                    border: #444 solid 0.08rem;
+                    padding: 1rem 0;
+                    text-decoration: none;
+                    list-style: none;
+                    color: #fff;
+                    background-color: #222;
+
+                    &:hover {
+                        &:hover {
+                            background-color: #fff;
+                            color: #222;
+                        }
+                        &:after {
+                            transition: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
